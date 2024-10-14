@@ -1,0 +1,6 @@
+wsjtx (2.7.0-rc2) experimental; urgency=low
+
+  * wsjtx Debian maintainer and upstream author are identical.
+    Therefore see also normal changelog file for Debian changes.
+
+ -- Joe Taylor <k1jt@arrl.net>  Mon, 14 Oct 2024 14:55:59 +0000

@@ -1,0 +1,50 @@
+'\" t
+.\"     Title: rigctl-wsjtx
+.\"    Author: [FIXME: author] [see http://www.docbook.org/tdg5/en/html/author]
+.\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
+.\"      Date: 09/08/2024
+.\"    Manual: WSJT-X Manual
+.\"    Source: AsciiDoc
+.\"  Language: English
+.\"
+.TH "RIGCTL\-WSJTX" "1" "09/08/2024" "AsciiDoc" "WSJT\-X Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+rigctl-wsjtx \- Hamlib 4 rigctld server\&.
+.SH "SYNOPSIS"
+.sp
+\fBrigctl\-wsjtx\fR [OPTIONS]
+.SH "DESCRIPTION"
+.sp
+\fBwsjtx\fR uses a version of the \fBhamlib\fR CAT control library\&. This library is virtually identical to the the current release version of \fBhamlib\fR\&. If a \fBwsjtx\fR user wishes to use the \fBhamlib\fR network rig server \fBrigctld\fR to remotely control their transceiver; then this special version of the \fBrigctl\fR client should be used since that too has the modified \fBhamlib\fR code embedded with it\&.
+.PP
+WSJT\-X home page
+.RS 4
+http://www\&.physics\&.princeton\&.edu/pulsar/K1JT/wsjtx\&.html
+.RE
+.PP
+WSJT\-X User\(cqs Guide
+.RS 4
+http://www\&.physics\&.princeton\&.edu/pulsar/K1JT/wsjtx\-doc/wsjtx\-main\-toc2\&.html
+.RE
+.SH "OPTIONS"
+.sp
+Refer to the \fBhamlib\fR documentation\&.

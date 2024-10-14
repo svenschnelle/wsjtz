@@ -1,0 +1,57 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+  <qresource>
+    <file alias="/icon_128x128.png">/home/svens/wsjtz/icons/Darwin/wsjtx.iconset/icon_128x128.png</file>
+    <file alias="/gpl-v3-logo.svg">/home/svens/wsjtz/contrib/gpl-v3-logo.svg</file>
+    <file alias="/splash.png">/home/svens/wsjtz/artwork/splash.png</file>
+    <file alias="/Palettes/Banana.pal">/home/svens/wsjtz/Palettes/Banana.pal</file>
+    <file alias="/Palettes/Blue1.pal">/home/svens/wsjtz/Palettes/Blue1.pal</file>
+    <file alias="/Palettes/Blue2.pal">/home/svens/wsjtz/Palettes/Blue2.pal</file>
+    <file alias="/Palettes/Blue3.pal">/home/svens/wsjtz/Palettes/Blue3.pal</file>
+    <file alias="/Palettes/Brown.pal">/home/svens/wsjtz/Palettes/Brown.pal</file>
+    <file alias="/Palettes/Cyan1.pal">/home/svens/wsjtz/Palettes/Cyan1.pal</file>
+    <file alias="/Palettes/Cyan2.pal">/home/svens/wsjtz/Palettes/Cyan2.pal</file>
+    <file alias="/Palettes/Cyan3.pal">/home/svens/wsjtz/Palettes/Cyan3.pal</file>
+    <file alias="/Palettes/Default.pal">/home/svens/wsjtz/Palettes/Default.pal</file>
+    <file alias="/Palettes/Digipan.pal">/home/svens/wsjtz/Palettes/Digipan.pal</file>
+    <file alias="/Palettes/Fldigi.pal">/home/svens/wsjtz/Palettes/Fldigi.pal</file>
+    <file alias="/Palettes/Gray1.pal">/home/svens/wsjtz/Palettes/Gray1.pal</file>
+    <file alias="/Palettes/Gray2.pal">/home/svens/wsjtz/Palettes/Gray2.pal</file>
+    <file alias="/Palettes/Green1.pal">/home/svens/wsjtz/Palettes/Green1.pal</file>
+    <file alias="/Palettes/Green2.pal">/home/svens/wsjtz/Palettes/Green2.pal</file>
+    <file alias="/Palettes/Jungle.pal">/home/svens/wsjtz/Palettes/Jungle.pal</file>
+    <file alias="/Palettes/Linrad.pal">/home/svens/wsjtz/Palettes/Linrad.pal</file>
+    <file alias="/Palettes/Negative.pal">/home/svens/wsjtz/Palettes/Negative.pal</file>
+    <file alias="/Palettes/Orange.pal">/home/svens/wsjtz/Palettes/Orange.pal</file>
+    <file alias="/Palettes/Pink.pal">/home/svens/wsjtz/Palettes/Pink.pal</file>
+    <file alias="/Palettes/Rainbow.pal">/home/svens/wsjtz/Palettes/Rainbow.pal</file>
+    <file alias="/Palettes/Scope.pal">/home/svens/wsjtz/Palettes/Scope.pal</file>
+    <file alias="/Palettes/Sunburst.pal">/home/svens/wsjtz/Palettes/Sunburst.pal</file>
+    <file alias="/Palettes/VK4BDJ.pal">/home/svens/wsjtz/Palettes/VK4BDJ.pal</file>
+    <file alias="/Palettes/YL2KF.pal">/home/svens/wsjtz/Palettes/YL2KF.pal</file>
+    <file alias="/Palettes/Yellow1.pal">/home/svens/wsjtz/Palettes/Yellow1.pal</file>
+    <file alias="/Palettes/Yellow2.pal">/home/svens/wsjtz/Palettes/Yellow2.pal</file>
+    <file alias="/Palettes/ZL1FZ.pal">/home/svens/wsjtz/Palettes/ZL1FZ.pal</file>
+    <file alias="/Translations/qt_ca.qm">/home/svens/wsjtz/qt_ca.qm</file>
+    <file alias="/Translations/qt_da.qm">/home/svens/wsjtz/qt_da.qm</file>
+    <file alias="/Translations/qt_en.qm">/home/svens/wsjtz/qt_en.qm</file>
+    <file alias="/Translations/qt_es.qm">/home/svens/wsjtz/qt_es.qm</file>
+    <file alias="/Translations/qt_it.qm">/home/svens/wsjtz/qt_it.qm</file>
+    <file alias="/Translations/qt_ja.qm">/home/svens/wsjtz/qt_ja.qm</file>
+    <file alias="/Translations/qt_ru.qm">/home/svens/wsjtz/qt_ru.qm</file>
+    <file alias="/Translations/qt_zh_TW.qm">/home/svens/wsjtz/qt_zh_TW.qm</file>
+    <file alias="/Translations/qt_it.qm">/home/svens/wsjtz/qt_it.qm</file>
+    <file alias="/Translations/wsjtx_ca.qm">/home/svens/wsjtz/wsjtx_ca.qm</file>
+    <file alias="/Translations/wsjtx_da.qm">/home/svens/wsjtz/wsjtx_da.qm</file>
+    <file alias="/Translations/wsjtx_en.qm">/home/svens/wsjtz/wsjtx_en.qm</file>
+    <file alias="/Translations/wsjtx_en_GB.qm">/home/svens/wsjtz/wsjtx_en_GB.qm</file>
+    <file alias="/Translations/wsjtx_es.qm">/home/svens/wsjtz/wsjtx_es.qm</file>
+    <file alias="/Translations/wsjtx_it.qm">/home/svens/wsjtz/wsjtx_it.qm</file>
+    <file alias="/Translations/wsjtx_ja.qm">/home/svens/wsjtz/wsjtx_ja.qm</file>
+    <file alias="/Translations/wsjtx_ru.qm">/home/svens/wsjtz/wsjtx_ru.qm</file>
+    <file alias="/Translations/wsjtx_zh.qm">/home/svens/wsjtz/wsjtx_zh.qm</file>
+    <file alias="/Translations/wsjtx_zh_HK.qm">/home/svens/wsjtz/wsjtx_zh_HK.qm</file>
+    <file alias="/Translations/wsjtx_zh_TW.qm">/home/svens/wsjtz/wsjtx_zh_TW.qm</file>
+    <file alias="/Translations/wsjtx_it.qm">/home/svens/wsjtz/wsjtx_it.qm</file>
+  </qresource>
+</RCC>

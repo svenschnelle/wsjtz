@@ -1,0 +1,114 @@
+'\" t
+.\"     Title: fst4sim
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
+.\"      Date: 09/08/2024
+.\"    Manual: WSJT-X Manual
+.\"    Source: AsciiDoc 2.7.0-rc2
+.\"  Language: English
+.\"
+.TH "FST4SIM" "1" "09/08/2024" "AsciiDoc 2\&.7\&.0\-rc2" "WSJT\-X Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+fst4sim, qra64sim \- Generate simulated QRA64, FST4, and FST4W mode signals\&.
+.SH "SYNOPSIS"
+.sp
+\fBqra64sim\fR msg A\-E Nsigs fDop DT Nfiles SNR
+.sp
+\fBfst4sim\fR msg TRsec f0 DT h fDop del Nfiles SNR W
+.SH "DESCRIPTION"
+.sp
+\fBfst4sim\fR can be used to generate FST4 and FST4W signals with user\-specified message content, mode parameters, and SNR values\&.
+.SH "ARGS"
+.PP
+\fBmsg\fR
+.RS 4
+A valid QRA64, FST4, or FST4W message enclosed in quotation marks\&.
+.RE
+.PP
+\fBA\-E\fR
+.RS 4
+QRA64 sub\-mode designator\&.
+.RE
+.PP
+\fBNsigs\fR
+.RS 4
+Number of signals to simulate, distributed even across a 2000 Hz bandwidth\&.
+.RE
+.PP
+\fBTRsec\fR
+.RS 4
+A valid T/R period duration (s)\&.
+.RE
+.PP
+\fBf0\fR
+.RS 4
+Integer signal frequency offset (Hz)\&.
+.RE
+.PP
+\fBDT\fR
+.RS 4
+Decimal signal time offset (s)\&.
+.RE
+.PP
+\fBh\fR
+.RS 4
+A valid modulation index\&.
+.RE
+.PP
+\fBfDop\fR
+.RS 4
+Decimal Doppler frequency spread (Hz)\&.
+.RE
+.PP
+\fBdel\fR
+.RS 4
+Decimal Watterson model delay (ms)\&.
+.RE
+.PP
+\fBnfiles\fR
+.RS 4
+Number of files to generate\&.
+.RE
+.PP
+\fBsnr\fR
+.RS 4
+Add Guassian noise to simulate SNR in 2500 Hz bandwidth\&.
+.RE
+.PP
+\fBW\fR
+.RS 4
+Hint to break ties between ambiguous messages
+\fI0\fR
+as 77\-bit (FST4),
+\fI1\fR
+as 50\-bit (FST4W)\&.
+.RE
+.sp
+Generated files are 12000 Hz sample rate, 16\-bit unsigned format, mono PCM \&.WAV files suitable for replay using WSJT\-X either vie the GUI \fBwsjtx\fR(1) or using the command line slow mode decoder \fBjt9\fR(1)\&. Files are named 000000_nnnnnn\&.wav (000000_nnnn\&.wav for QRA64), where \fInnnnnn\fR or \fInnnn\fR increments from zero\&.
+.SH "AUTHOR"
+.sp
+Joe Taylor, K1JT\&.
+.SH "COPYING"
+.sp
+\fBfcal\fR is Copyright \(co 2001 \- 2019 by Joseph H\&. Taylor, Jr\&., K1JT, with contributions from additional authors\&. WSJT\-X is Open Source software, licensed under the GNU General Public License (GPLv3)\&.
+.sp
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\&. See the GNU General Public License for more details\&.

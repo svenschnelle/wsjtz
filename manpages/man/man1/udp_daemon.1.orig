@@ -1,0 +1,74 @@
+'\" t
+.\"     Title: wsjtx
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
+.\"      Date: 09/08/2024
+.\"    Manual: WSJT-X Manual
+.\"    Source: AsciiDoc 2.7.0-rc2
+.\"  Language: English
+.\"
+.TH "WSJTX" "1" "09/08/2024" "AsciiDoc 2\&.7\&.0\-rc2" "WSJT\-X Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+udp_daemon \- Reference example UDP server
+.SH "SYNOPSIS"
+.sp
+\fBudp_daemon\fR [\fIOPTIONS\fR]
+.SH "DESCRIPTION"
+.sp
+\fBudp_daemon\fR does not serve any useful purpose other than to demonstrate the UDP message features of \fBWSJT\-X\fR\&. It is a small command line application that interacts with any running \fBWSJT\-X\fR instances\&.
+.sp
+Developers writing add on applications may find the source code of \fBudp_daemon\fR contained in the \fBWSJT\-X\fR code repository useful\&. The files NetworkMessage\&.hpp, MessageServer\&.hpp, MessageClient\&.hpp and their associated implementations along with the application source UDPDaemon\&.cpp should cover all the required areas\&. All these files can be found at:
+.sp
+https://sourceforge\&.net/p/wsjt/wsjt/HEAD/tree/branches/wsjtx/
+.sp
+\fBudp_daemon\fR may also be used as a multi\-cast UDP server which allows multiple instances of \fBudp_daemon\fR to be run concurrently, to do this simply pass a suitable multi\-cast group address using the command line option and in \fBWSJT\-X\fR in the "\fBSettings→Reporting→UDP Server\fR" pane e\&.g\&. 239\&.255\&.0\&.1 or ff03::1 for a local scope group\&.
+.sp
+Note that on some systems it may be necessary to add a static multi\-cast route to the routing table before multi\-cast traffic can be routed to sockets on the same host as the sender\&.
+.SH "OPTIONS"
+.PP
+\fB\-p\fR PORT, \fB\-\-port\fR=PORT
+.RS 4
+Optional service port number to listen on (default 2237)\&.
+.RE
+.PP
+\fB\-g\fR MULTICAST\-GROUP, \fB\-\-group\fR=MULTICAST\-GROUP
+.RS 4
+Optional multicast group address to join (Default unicast server)\&.
+.RE
+.PP
+\fB\-v, \-\-version\fR
+.RS 4
+Display the application version\&.
+.RE
+.PP
+\fB\-h,\-\-help\fR
+.RS 4
+Display usage information\&.
+.RE
+.SH "AUTHOR"
+.sp
+Bill Somerville, G4WJS\&.
+.SH "COPYING"
+.sp
+\fBudp_daemon\fR is Copyright \(co 2015 by William Somerville, G4WJS, with contributions from additional authors\&. \fBudp_daemon\fR is Open Source software, licensed under the GNU General Public License (GPLv3)\&.
+.sp
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\&. See the GNU General Public License for more details\&.

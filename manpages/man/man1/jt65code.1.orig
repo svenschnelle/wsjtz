@@ -1,0 +1,218 @@
+'\" t
+.\"     Title: jt65code
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
+.\"      Date: 09/08/2024
+.\"    Manual: WSJT-X Manual
+.\"    Source: AsciiDoc 2.7.0-rc2
+.\"  Language: English
+.\"
+.TH "JT65CODE" "1" "09/08/2024" "AsciiDoc 2\&.7\&.0\-rc2" "WSJT\-X Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+jt65code, jt9code, jt4code, qra64code, ft8code, msk144code \- Weak signal communications encoding support utilities\&.
+.SH "SYNOPSIS"
+.sp
+\fBjt65code\fR "\fIMESSAGE\fR"
+.sp
+\fBjt65code\fR [\fIOPTIONS\fR]
+.sp
+\fBjt9code\fR "\fIMESSAGE\fR"
+.sp
+\fBjt9code\fR [\fIOPTIONS\fR]
+.sp
+\fBjt4code\fR "\fIMESSAGE\fR"
+.sp
+\fBjt4code\fR [\fIOPTIONS\fR]
+.sp
+\fBqra64code\fR "\fIMESSAGE\fR"
+.sp
+\fBqra64code\fR [\fIOPTIONS\fR]
+.sp
+\fBft8code\fR "\fIMESSAGE\fR"
+.sp
+\fBft8code\fR [\fIOPTIONS\fR]
+.SH "OPTIONS"
+.PP
+\fB\-t\fR
+.RS 4
+Prints a selection of messages alongside their corresponding decoded form and types\&. With
+\fBft8code\fR
+prints a selection of short format messages
+.RE
+.PP
+\fB\-T\fR
+.RS 4
+As
+\fB\-T\fR
+but for
+\fBft8code\fR
+prints long format messages\&.
+.RE
+.SH "DESCRIPTION"
+.sp
+\fBjt65code\fR, \fBjt9code\fR, \fBjt4code\fR, and \fBft8code\fR are utility programs that let you explore the conversion of user\-level messages into channel symbols or \(lqtone numbers\&.\(rq These programs can be useful to someone designing a beacon generator for JT9 or JT65, or for studying behavior of the error\-control codes for each of the protocols\&.
+.sp
+Channel\-symbol values for JT9 run from 0 to 8, with 0 representing the sync tone\&. The total number of symbols in a transmitted message is 85\&. To run jt9code, enter the program name followed by a JT9 message enclosed in quotes\&. In Windows the command and program output might look like this:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ jt9code "G0XYZ K1ABC FN42"
+Message:   G0XYZ K1ABC FN42
+Channel symbols:
+ 0 0 7 3 0 3 2 5 4 0 1 7 7 7 8 0 4 8 8 2 2 1 0 1 1 3 5 4 5 6
+ 8 7 0 6 0 1 8 3 3 7 8 1 1 2 4 5 8 1 5 2 0 0 8 6 0 5 8 5 1 0
+ 5 8 7 7 2 0 4 6 6 6 7 6 0 1 8 8 5 7 2 5 1 5 0 4 0
+Decoded message: G0XYZ K1ABC FN42
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+For the corresponding program jt65code only the information\-carrying channel symbols are shown, and the symbol values range from 0 to 63\&. Sync synbols lie two tone intervals below data tone 0, and the sequential locations of sync symbols are described in the JT65 Protocol section of this Guide\&.
+.sp
+A typical execution of jt65code is shown below\&. The program displays the packed message of 72 bits, shown here as 12 six\-bit symbol values, followed by the channel symbols:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ jt65code "G0XYZ K1ABC FN42"
+Message:   G0XYZ K1ABC FN42
+Packed message, 6\-bit symbols:  61 36 45 30  3 55  3  2 14  5 33 40
+Information\-carrying channel symbols:
+   56 40  8 40 51 47 50 34 44 53 22 53 28 31 13 60 46  2 14 58 43
+   41 58 35  8 35  3 24  1 21 41 43  0 25 54  9 41 54  7 25 21  9
+   62 59  7 43 31 21 57 13 59 41 17 49 19 54 21 39 33 42 18  2 60
+Decoded message: G0XYZ K1ABC FN42
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+For an illustration of the power of the strong error\-control coding in JT9, JT65 and JT4, try looking at the channel symbols after changing a single character in the message\&. For example, change the grid locater from FN42 to FN43 in the JT65 message:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ jt65code "G0XYZ K1ABC FN43"
+Message:   G0XYZ K1ABC FN43
+Packed message, 6\-bit symbols:  61 36 45 30  3 55  3  2 14  5 33 41
+Information\-carrying channel symbols:
+   25 35 47  8 13  9 61 40 44  9 51  6  8 40 38 34  8  2 21 23 30
+   51 32 56 39 35  3 50 48 30  8  5 40 18 54  9 24 30 26 61 23 11
+    3 59  7  7 39  1 25 24  4 50 17 49 52 19 34  7  4 34 61  2 61
+Decoded message: G0XYZ K1ABC FN43
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+You will discover that every possible JT65 message differs from every other possible JT65 message in at least 52 of the 63 information\-carrying channel symbols\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ qra64code "G0XYZ K1ABC FN43"
+     Message                 Decoded                Err? Type
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+   1 G0XYZ K1ABC FN43        G0XYZ K1ABC FN43            1:    Std Msg
+
+Packed message, 6\-bit symbols  61 36 45 30  3 55  3  2 14  5 33 41
+
+Information\-carrying channel symbols
+   61 36 45 30  3 55  3  2 14  5 33 41 14 28  2  7 58 45  9 43 20 48 29 55 43 24  3 13 18 21
+   40  3 17 28 59 62  2 50 26 24  2  1  2 61 10  9 16 40  1 18 28 30 33 39 60 45 16 21 60 11
+    9 40 14
+
+Channel symbols including sync
+   20 50 60  0 40 10 30 61 36 45 30  3 55  3  2 14  5 33 41 14 28  2  7 58 45  9 43 20 48 29
+   55 43 24  3 13 18 21 40  3 20 50 60  0 40 10 30 17 28 59 62  2 50 26 24  2  1  2 61 10  9
+   16 40  1 18 28 30 33 39 60 45 16 21 60 11  9 40 14 20 50 60  0 40 10 30
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ msk144code "G0XYZ K1ABC FN43"
+    Message                               Decoded                             Err i3\&.n3
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+ 1\&. G0XYZ K1ABC FN43                      G0XYZ K1ABC FN43                         1\&.  Standard msg
+
+Channel symbols
+110000110100110001010010011100110010010110000011011001001100001101111010
+110010110111111100001101001111000111101011111011100001110000011101110110
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ ft8code "G0XYZ K1ABC FN43"
+    Message                               Decoded                             Err i3\&.n3
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+ 1\&. G0XYZ K1ABC FN43                      G0XYZ K1ABC FN43                         1\&.  Standard msg
+
+Source\-encoded message, 77 bits:
+00001000111111010001110111010000010011011110111100011010100010100001100111001
+
+14\-bit CRC:
+00110001001011
+
+83 Parity bits:
+10000110000001010101100000100110100110100000111000101110000110001001110000000110011
+
+Channel symbols (79 tones):
+  Sync               Data               Sync               Data               Sync
+3140652 03174526450547670460602143205 3140652 64040136505454507064041140042 3140652
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+WSJT\-X home page
+.RS 4
+https://www\&.physics\&.princeton\&.edu/pulsar/K1JT/wsjtx\&.html
+.RE
+.PP
+WSJT\-X User\(cqs Guide
+.RS 4
+https://www\&.physics\&.princeton\&.edu/pulsar/K1JT/wsjtx\-doc/wsjtx\-main\-2\&.7\&.0\-rc2\&.html
+.RE
+.SH "AUTHOR"
+.sp
+Joe Taylor, K1JT\&.
+.SH "COPYING"
+.sp
+\fBjt65code\fR, \fBjt9code\fR, \fBjt4code\fR, and \fBft8code\fR are Copyright \(co 2001 \- 2020 by Joseph H\&. Taylor, Jr\&., K1JT, with contributions from additional authors\&. WSJT\-X is Open Source software, licensed under the GNU General Public License (GPLv3)\&.
+.sp
+These programs are distributed in the hope that they will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\&. See the GNU General Public License for more details\&.
